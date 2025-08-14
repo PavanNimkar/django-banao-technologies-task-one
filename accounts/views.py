@@ -90,3 +90,7 @@ def patient_dashboard(request):
 @login_required
 def doctor_dashboard(request):
     return render(request, "doctor_dashboard.html", {"user": request.user})
+
+
+def custom_404(request, exception):
+    return render(request, "404.html", status=404)

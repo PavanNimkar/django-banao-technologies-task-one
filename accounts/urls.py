@@ -9,3 +9,5 @@ urlpatterns = [
     path("patient-dashboard/", views.patient_dashboard, name="patient_dashboard"),
     path("doctor-dashboard/", views.doctor_dashboard, name="doctor_dashboard"),
 ]
+
+handler404 = "accounts.views.custom_404"
