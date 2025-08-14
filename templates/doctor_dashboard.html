@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}
+    Doctor Dashboard
+{% endblock title %}
+{% block content %}
+    <div class="bg-white p-8 rounded-xl shadow-lg max-w-3xl mx-auto border border-gray-100">
+        <!-- Header -->
+        <div class="flex items-center space-x-4 border-b pb-4 mb-6">
+            {% if user.profile_picture %}
+                <div class="relative">
+                    <img src="{{ user.profile_picture.url }}"
+                         alt="Profile Picture"
+                         class="w-24 h-24 rounded-full object-cover border-4 border-blue-100">
+                    <span class="absolute bottom-0 right-0 bg-green-500 text-white text-xs px-2 py-1 rounded-full">
+                        <i class="fa-solid fa-user-md"></i>
+                    </span>
+                </div>
+            {% else %}
+                <div class="w-24 h-24 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 text-4xl">
+                    <i class="fa-solid fa-user-md"></i>
+                </div>
+            {% endif %}
+            <div>
+                <h2 class="text-3xl font-bold text-blue-700 flex items-center space-x-2">
+                    <i class="fa-solid fa-stethoscope"></i>
+                    <span>Doctor Dashboard</span>
+                </h2>
+                <p class="text-gray-500">Welcome back, Dr. {{ user.first_name }}!</p>
+            </div>
+        </div>
+        <!-- Info Section -->
+        <div class="space-y-4">
+            <p class="flex items-center space-x-2 text-gray-700">
+                <i class="fa-solid fa-user text-blue-500"></i>
+                <span class="font-semibold">Name:</span>
+                <span>Dr. {{ user.first_name }} {{ user.last_name }}</span>
+            </p>
+            <p class="flex items-center space-x-2 text-gray-700">
+                <i class="fa-solid fa-envelope text-blue-500"></i>
+                <span class="font-semibold">Email:</span>
+                <span>{{ user.email }}</span>
+            </p>
+            <p class="flex items-center space-x-2 text-gray-700">
+                <i class="fa-solid fa-location-dot text-blue-500"></i>
+                <span class="font-semibold">Address:</span>
+                <span>{{ user.address_line1 }}, {{ user.city }}, {{ user.state }} - {{ user.pincode }}</span>
+            </p>
+        </div>
+        <!-- Actions -->
+        <div class="mt-6 flex space-x-4">
+            <a href="{% url 'logout' %}"
+               class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg shadow flex items-center space-x-2 transition">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+    </div>
+{% endblock content %}

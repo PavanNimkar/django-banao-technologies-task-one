@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    Home
+{% endblock title %}
+Home
+{% block content %}
+    <!-- Hero Section -->
+    <section class="relative bg-secondary text-white">
+        <div class="container mx-auto flex flex-col lg:flex-row items-center py-16 px-6 text-[#2563EB]">
+            <div class="lg:w-1/2 space-y-6 mb-3">
+                <h1 class="text-4xl font-bold">
+                    Your path to better <span class="text-primary">physical wellness</span> starts here
+                </h1>
+                <p class="text-lg justify-evenly w-[30rem]">
+                    Count on our expert physical therapy experts to help you move better and feel better.
+                </p>
+                <button class="bg-[#2563EB] hover:bg-blue-700 p-2 rounded-2xl">
+                    <a href="#appointment"
+                       class="bg-primary text-white px-6 py-3 rounded font-semibold">Schedule a Consultation</a>
+                </button>
+            </div>
+            <div class="lg:w-1/2">
+                <img src="{% static '/images/medical-hero.jpg' %}"
+                     alt="Hero"
+                     class="rounded-lg shadow-lg">
+            </div>
+        </div>
+    </section>
+    <!-- What we offer -->
+    <section class="bg-primary py-16">
+        <div class="container mx-auto text-center space-y-8">
+            <h2 class="text-3xl font-bold text-black">What we offer</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow p-4">
+                    <img src="{% static '/images/service1.jpg' %}" class="rounded-lg mb-4">
+                    <h3 class="font-bold">Rehabilitative Physical Therapy</h3>
+                </div>
+                <div class="bg-white rounded-lg shadow p-4">
+                    <img src="{% static '/images/service2.jpg' %}" class="rounded-lg mb-4">
+                    <h3 class="font-bold">Pediatric Physical Therapy</h3>
+                </div>
+                <div class="bg-white rounded-lg shadow p-4">
+                    <img src="{% static '/images/service3.jpg' %}" class="rounded-lg mb-4">
+                    <h3 class="font-bold">Geriatric Physical Therapy</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Why choose us -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-10">Why people prefer us</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <i class="fas fa-user-md text-primary text-4xl mb-4"></i>
+                    <h4 class="font-bold">Expertly Trained Therapists</h4>
+                    <p>Highly skilled professionals with years of experience.</p>
+                </div>
+                <div>
+                    <i class="fas fa-hospital text-primary text-4xl mb-4"></i>
+                    <h4 class="font-bold">Up-to-Date Practices</h4>
+                    <p>Modern facilities and innovative treatments.</p>
+                </div>
+                <div>
+                    <i class="fas fa-file-medical text-primary text-4xl mb-4"></i>
+                    <h4 class="font-bold">Inclusive Insurance</h4>
+                    <p>We accept a wide range of insurance providers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonials -->
+    <section class="bg-gray-100 py-16">
+        <div class="container mx-auto text-center space-y-8">
+            <h2 class="text-3xl font-bold">Feedback from our clients</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded shadow">
+                    <p class="mb-4">"Amazing therapists, I feel so much better!"</p>
+                    <strong>- Elvira Montanez</strong>
+                </div>
+                <div class="bg-white p-6 rounded shadow">
+                    <p class="mb-4">"Top-notch facilities and professional care."</p>
+                    <strong>- Casper Berkley</strong>
+                </div>
+                <div class="bg-white p-6 rounded shadow">
+                    <p class="mb-4">"They truly care about your recovery journey."</p>
+                    <strong>- Daniel Gallego</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- CTA Section -->
+    <section class="bg-secondary text-white py-16">
+        <div class="container mx-auto text-center space-y-6 px-6 text-black">
+            <h2 class="text-3xl md:text-4xl font-bold">Ready to start your recovery journey?</h2>
+            <p class="text-lg max-w-2xl mx-auto">
+                Our team of expert physical therapists is here to help you move better and live pain-free.
+                Don’t wait — book your consultation today and take the first step towards better health.
+            </p>
+            <div class="space-x-4">
+                <a href="#appointment"
+                   class="bg-[#2563EB] hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded">Book Now</a>
+                <a href="#"
+                   class="bg-transparent border border-primary text-primary font-semibold px-6 py-3 rounded hover:bg-primary hover:text-black transition">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Book Appointment -->
+    <section id="appointment" class="bg-primary py-16">
+        <div class="container mx-auto flex flex-col lg:flex-row items-center gap-12">
+            <div class="lg:w-1/2 space-y-4">
+                <h2 class="text-3xl font-bold text-black">Book an Appointment</h2>
+                <p class="text-black">Contact us to schedule your consultation and start your recovery journey today.</p>
+                <ul class="text-black">
+                    <li>
+                        <strong>Phone:</strong> (123) 456-7890
+                    </li>
+                    <li>
+                        <strong>Email:</strong> hello@example.com
+                    </li>
+                    <li>
+                        <strong>Clinic Hours:</strong> Mon–Fri 8am–7pm
+                    </li>
+                </ul>
+            </div>
+            <div class="lg:w-1/2">
+                <img src="{% static '/images/appointment.jpg' %}"
+                     class="rounded-lg shadow-lg">
+            </div>
+        </div>
+    </section>
+{% endblock content %}

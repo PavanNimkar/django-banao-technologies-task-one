@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% block title %}
+       Signup - Medical Portal
+{% endblock title %}
+{% load static %}
+{% block content %}
+       <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-md">
+              <h2 class="text-2xl font-bold mb-6 text-blue-700 flex items-center space-x-2">
+                     <i class="fa-solid fa-user-plus"></i>
+                     <span>Create an Account</span>
+              </h2>
+              <form method="POST"
+                    enctype="multipart/form-data"
+                    class="grid grid-cols-1 md:grid-cols-2 gap-6"
+                    id="signupForm">
+                     {% csrf_token %}
+                     <div>
+                            <label class="block font-semibold">
+                                   <i class="fa-solid fa-user"></i> First Name
+                            </label>
+                            <input type="text" name="first_name" class="w-full border rounded px-3 py-2">
+                     </div>
+                     <div>
+                            <label class="block font-semibold">
+                                   <i class="fa-solid fa-user"></i> Last Name
+                            </label>
+                            <input type="text" name="last_name" class="w-full border rounded px-3 py-2">
+                     </div>
+                     <div class="md:col-span-2">
+                            <label class="block font-semibold">
+                                   <i class="fa-solid fa-image"></i> Profile Picture
+                            </label>
+                            <input required type="file" name="profile_picture" class="w-full">
+                     </div>
+                     <div>
+                            <label class="block font-semibold">
+                                   <i class="fa-solid fa-id-card"></i> Username
+                            </label>
+                            <input type="text" name="username" class="w-full border rounded px-3 py-2">
+                     </div>
+                     <div>
+                            <label class="block font-semibold">
+                                   <i class="fa-solid fa-envelope"></i> Email
+                            </label>
+                            <input type="email" name="email" class="w-full border rounded px-3 py-2">
+                     </div>
+                     <div>
+                            <label class="block font-semibold">
+                                   <i class="fa-solid fa-lock"></i> Password
+                            </label>
+                            <input id="password"
+                                   type="password"
+                                   name="password"
+                                   class="w-full border rounded px-3 py-2"
+                                   placeholder="Password"
+                                   required>
+                     </div>
+                     <div>
+                            <label class="block font-semibold">
+                                   <i class="fa-solid fa-lock"></i> Confirm Password
+                            </label>
+                            <input id="confirm_password"
+                                   type="password"
+                                   name="confirm_password"
+                                   class="w-full border rounded px-3 py-2"
+                                   placeholder="Confirm Password"
+                                   required>
+                     </div>
+                     <div class="md:col-span-2">
+                            <label class="block font-semibold">
+                                   <i class="fa-solid fa-location-dot"></i> Address
+                            </label>
+                            <input type="text"
+                                   name="address_line1"
+                                   placeholder="Street Address"
+                                   class="w-full border rounded px-3 py-2 mb-2">
+                            <div class="grid grid-cols-3 gap-2">
+                                   <input type="text"
+                                          name="city"
+                                          placeholder="City"
+                                          class="border rounded px-3 py-2">
+                                   <input type="text"
+                                          name="state"
+                                          placeholder="State"
+                                          class="border rounded px-3 py-2">
+                                   <input type="text"
+                                          name="pincode"
+                                          placeholder="Pincode"
+                                          class="border rounded px-3 py-2">
+                            </div>
+                     </div>
+                     <div class="md:col-span-2">
+                            <label class="block font-semibold">
+                                   <i class="fa-solid fa-user-tag"></i> User Type
+                            </label>
+                            <select name="user_type" class="w-full border rounded px-3 py-2">
+                                   <option value="patient">Patient</option>
+                                   <option value="doctor">Doctor</option>
+                            </select>
+                     </div>
+                     <div class="md:col-span-2 text-right">
+                            <button type="submit"
+                                    class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded flex items-center justify-center space-x-2">
+                                   <i class="fa-solid fa-paper-plane"></i>
+                                   <span>Sign Up</span>
+                            </button>
+                     </div>
+              </form>
+       </div>
+       {% comment %} Javascript{% endcomment %}
+{% endblock content %}

@@ -1,0 +1,124 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            {% block title %}
+                Medical Portal
+            {% endblock title %}
+        </title>
+        <!-- Tailwind -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- Font Awesome -->
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <!-- Alpine.js (optional for interactivity) -->
+        <script src="//unpkg.com/alpinejs" defer></script>
+        {% comment %} favicon {% endcomment %}
+        <link rel="shortcut icon"
+              href="{% static 'images/favicon.png' %}"
+              type="image/x-icon">
+    </head>
+    <body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+        <!-- Loader -->
+        <div id="loader"
+             class="fixed inset-0 flex items-center justify-center bg-white z-50">
+            <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-green-500"></div>
+        </div>
+        <!-- Navbar -->
+        <nav class="bg-blue-600 text-white shadow-lg">
+            <div class="container mx-auto flex justify-between items-center py-4 px-6">
+                <!-- Logo -->
+                <a href="{% url 'home' %}"
+                   class="flex items-center space-x-2 text-2xl font-bold">
+                    <i class="fa-solid fa-hospital"></i>
+                    <span>Medical Portal</span>
+                </a>
+                <!-- Nav Links -->
+                {% if user.is_authenticated %}
+                    {% if user.user_type == 'patient' %}
+                        <div class="space-x-4 flex items-center">
+                            <a href="{% url 'patient_dashboard' %}"
+                               class="bg-white text-blue-600 px-4 py-2 rounded hover:bg-blue-100 transition">
+                                <i class="fa-solid fa-user-plus"></i> Dashboard
+                            </a>
+                            <a href="{% url 'logout' %}"
+                               class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition">
+                                <i class="fa-solid fa-right-to-bracket"></i> Logout
+                            </a>
+                        </div>
+                    {% else %}
+                        <div class="space-x-4 flex items-center">
+                            <a href="{% url 'doctor_dashboard' %}"
+                               class="bg-white text-blue-600 px-4 py-2 rounded hover:bg-blue-100 transition">
+                                <i class="fa-solid fa-user-plus"></i> Dashboard
+                            </a>
+                            <a href="{% url 'logout' %}"
+                               class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition">
+                                <i class="fa-solid fa-right-to-bracket"></i> Logout
+                            </a>
+                        </div>
+                    {% endif %}
+                {% else %}
+                    <div class="space-x-4 flex items-center">
+                        <a href="{% url 'signup' %}"
+                           class="bg-white text-blue-600 px-4 py-2 rounded hover:bg-blue-100 transition">
+                            <i class="fa-solid fa-user-plus"></i> Signup
+                        </a>
+                        <a href="{% url 'login' %}"
+                           class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition">
+                            <i class="fa-solid fa-right-to-bracket"></i> Login
+                        </a>
+                    </div>
+                {% endif %}
+            </div>
+        </nav>
+        {% comment %} messages {% endcomment %}
+        {% if messages %}
+            <div class="fixed top-5 right-5 z-50 space-y-3 w-80">
+                {% for message in messages %}
+                    {% if message.tags == "success" %}
+                        <div class="flex items-center p-4 bg-green-100 border-l-4 border-green-500 rounded shadow-lg animate-slide-in">
+                            <i class="fas fa-check-circle text-green-600 text-xl mr-3"></i>
+                            <span class="text-green-800 font-medium">{{ message }}</span>
+                        </div>
+                    {% elif message.tags == "error" %}
+                        <div class="flex items-center p-4 bg-red-100 border-l-4 border-red-500 rounded shadow-lg animate-slide-in">
+                            <i class="fas fa-times-circle text-red-600 text-xl mr-3"></i>
+                            <span class="text-red-800 font-medium">{{ message }}</span>
+                        </div>
+                    {% elif message.tags == "warning" %}
+                        <div class="flex items-center p-4 bg-yellow-100 border-l-4 border-yellow-500 rounded shadow-lg animate-slide-in">
+                            <i class="fas fa-exclamation-triangle text-yellow-600 text-xl mr-3"></i>
+                            <span class="text-yellow-800 font-medium">{{ message }}</span>
+                        </div>
+                    {% else %}
+                        <div class="flex items-center p-4 bg-blue-100 border-l-4 border-blue-500 rounded shadow-lg animate-slide-in">
+                            <i class="fas fa-info-circle text-blue-600 text-xl mr-3"></i>
+                            <span class="text-blue-800 font-medium">{{ message }}</span>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+        <!-- Page Content -->
+        <main class="flex-1 container mx-auto py-8 px-6">
+            {% block content %}
+            {% endblock content %}
+        </main>
+        <!-- Footer -->
+        <footer class="bg-blue-600 text-white py-4 mt-auto">
+            <div class="container mx-auto text-center flex flex-col items-center space-y-2">
+                <div>
+                    <i class="fa-solid fa-heart-pulse text-red-400"></i>
+                    <span class="ml-2">Caring for your health, always</span>
+                </div>
+                <p>copy; 2025 Medical Portal. All rights reserved.</p>
+            </div>
+        </footer>
+        {% comment %} Javascript {% endcomment %}
+        <script src="{% static 'accounts/js/loader.js' %}"></script>
+    </body>
+</html>
