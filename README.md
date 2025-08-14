@@ -56,6 +56,20 @@ Built using **Django**, **Tailwind CSS**, and **JavaScript**.
 
 ---
 
+## Snapshots
+- **Home Page**
+
+
+- **SignUp Page**
+
+
+- **Login Page**
+
+
+- **Dashboard of Patient and Doctors**
+
+
+
 ## Commands to Run the Project
 
 **Run the project:**  
