@@ -55,7 +55,7 @@ Built using **Django**, **Tailwind CSS**, and **JavaScript**.
 
 **Run the project:**  
 
-### 1. Create and activate virtual environment
+### 1. Run Project
 ```bash
 # Create virtual environment
 python -m venv venv
