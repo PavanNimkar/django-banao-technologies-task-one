@@ -1,6 +1,11 @@
 # django-banao-technologies-task-one
 ## User Authentication and Dashboard Application
 
+## Superuser Credentials
+
+username: admin
+password: admin@123
+
 ## Description
 This is a web application built for an internship shortlisting task. The application enables **signup and login functionality** for multiple types of users and redirects them to their respective dashboards after login.  
 
