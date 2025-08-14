@@ -58,17 +58,19 @@ Built using **Django**, **Tailwind CSS**, and **JavaScript**.
 
 ## Snapshots
 - **Home Page**
-
+- <img width="1366" height="768" alt="Medi_homepage" src="https://github.com/user-attachments/assets/12640bd8-4653-4039-bdd9-4a0af1f8b4dd" />
 
 - **SignUp Page**
-
+- <img width="1366" height="768" alt="Medi_signup" src="https://github.com/user-attachments/assets/fbb9777f-989a-4b74-afb2-0ac14b3c680e" />
 
 - **Login Page**
+- <img width="1366" height="768" alt="Medi_login" src="https://github.com/user-attachments/assets/bb845c9e-717b-4dca-bd23-8a6dcc997e44" />
 
+- **Dashboard of Patient**
+- <img width="1366" height="768" alt="Medi_patient_dashboard" src="https://github.com/user-attachments/assets/934b1608-180d-471a-8288-421e54a39733" />
 
-- **Dashboard of Patient and Doctors**
-
-
+- **Dashboard of Doctors**
+- <img width="1362" height="570" alt="Medi_doctor_dashboard" src="https://github.com/user-attachments/assets/a1e81e6a-74a6-4550-97d1-1670a51b5e9b" />
 
 ## Commands to Run the Project
 
