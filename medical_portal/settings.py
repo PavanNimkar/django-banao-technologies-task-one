@@ -133,10 +133,6 @@ MEDIA_ROOT = BASE_DIR / "media"
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]  # BASE_DIR is usually your project root
 
-# Page not found
-DEBUG = False
-ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field

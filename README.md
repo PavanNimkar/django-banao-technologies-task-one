@@ -13,8 +13,7 @@ Custom features include:
 - Website loader  
 - Interactive GUI  
 - Responsive design (mobile and desktop)  
-- Django messages module for notifications 
-- Page Not Found Page 
+- Django messages module for notifications  
 
 Built using **Django**, **Tailwind CSS**, and **JavaScript**.  
 
